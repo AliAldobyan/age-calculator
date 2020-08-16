@@ -15,7 +15,7 @@ def calculate_age(year, month, day):
 	d = datetime(2019,9,4)
 	birthdate = datetime.date(year,month,day)
 	age = d - birthdate
-	age_in_years = (age.days) / 365
+	age_in_years = int((age.days) / 365)
 	print("You are %d years old" % (age_in_years))
 
 def main():
