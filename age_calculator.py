@@ -2,10 +2,10 @@ from datetime import datetime
 
 def check_birthdate(year, month, day):
 	# write code here
-	d = datetime(2019,9,4)
-	age_date = datetime(year,month,day)
+	d = datetime.date(2019,9,4)
+	age_date = datetime.date(year,month,day)
 
-	if age_date > d:
+	if age_date >= d:
 		return False
 	else:
 		return True
@@ -13,7 +13,7 @@ def check_birthdate(year, month, day):
 def calculate_age(year, month, day):
     # write code here
 	d = datetime(2019,9,4)
-	birthdate = datetime(year,month,day)
+	birthdate = datetime.date(year,month,day)
 	age = d - birthdate
 	age_in_years = (age.days) / 365
 	print("You are %d years old" % (age_in_years))
