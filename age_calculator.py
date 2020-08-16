@@ -2,20 +2,18 @@ from datetime import datetime
 
 def check_birthdate(year, month, day):
 	# write code here
-	today_date = datetime.today()
-	age_date = datetime(year, month, day)
-
-	if age_date > today_date:
-		return False
-	else:
+	birthdate = datetime(year, month, day)
+	today = datetime.now()
+	if today > birthdate:
 		return True
+	else:
+		return False
 
 def calculate_age(year, month, day):
     # write code here
-	d = datetime(2019, 9, 4)
-	birthdate = datetime(year, month, day)
-	age = d - birthdate
-	age_in_years = (age.days) / 365
+	age = datetime.now() - datetime(year, month, day)
+	age_in_years = age.days/365
+
 	print("You are %d years old" % (age_in_years))
 
 def main():
@@ -24,7 +22,7 @@ def main():
 	month = int(input("Enter month of birth: "))
 	day = int(input("Enter day of birth: "))
 
-	if check_birthdate(year, month, day) is True:
+	if check_birthdate(year, month, day):
 		calculate_age(year, month, day)
 	else:
 		print("The birthdate is invalid")
